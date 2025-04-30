@@ -1,4 +1,4 @@
-package com.project.page.objects;
+package com.project.data;
 
 public class OrderDataTest {
     private final String browser;

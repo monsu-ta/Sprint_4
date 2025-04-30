@@ -20,6 +20,8 @@ public class OrderSecondPage {
     private final By yesButtonLocator = By.xpath("//button[text()='Да']");
     private final By statusButtonLocator = By.xpath("//button[text()='Посмотреть статус']");
 
+    private final String periodSelect = "//div[text()='%s']";
+
     public OrderSecondPage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
@@ -34,7 +36,7 @@ public class OrderSecondPage {
     public void selectRentalPeriod(String period) {
         WebElement listPeriod = wait.until(ExpectedConditions.elementToBeClickable(periodDropdownLocator));
         listPeriod.click();
-        driver.findElement(By.xpath(String.format("//div[text()='%s']", period))).click();
+        driver.findElement(By.xpath(String.format(periodSelect, period))).click();
     }
 
     public void selectColor(String color) {

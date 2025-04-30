@@ -18,6 +18,8 @@ import java.time.Duration;
         private final By phoneLocator = By.xpath("//input[@placeholder='* Телефон: на него позвонит курьер']");
         private final By nextButtonLocator = By.xpath("//button[text()='Далее']");
 
+        private final String metroStation = "//div[text()='%s']";
+
         public OrderFirstPage(WebDriver driver) {
             this.driver = driver;
             this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
@@ -39,7 +41,7 @@ import java.time.Duration;
             WebElement metroField = wait.until(ExpectedConditions.elementToBeClickable(metroLocator));
             metroField.click();
             metroField.sendKeys(station);
-            driver.findElement(By.xpath(String.format("//div[text()='%s']", station))).click();
+            driver.findElement(By.xpath(String.format(metroStation, station))).click();
         }
 
         public void fillPhone(String phone) {

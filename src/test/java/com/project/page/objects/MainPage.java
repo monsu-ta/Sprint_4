@@ -16,6 +16,8 @@ public class MainPage {
     private final By cookieLocator = By.id("rcc-confirm-button");
     private final By orderHeaderButtonLocator = By.className("Header_Link__1TAG7");
     private final By orderBigButtonLocator = By.xpath("//button[contains(@class, 'Button_Button__ra12g') and contains(text(), 'Заказать')]");
+    private final By cardButtonLocator = By.xpath("//div[@id='accordion__heading-%d']");
+    private final By cardContentLocator = By.xpath("//div[@id='accordion__panel-%d']/p");
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
@@ -25,6 +27,10 @@ public class MainPage {
     public void closeCookieBanner() {
         WebElement cookieButton = wait.until(ExpectedConditions.visibilityOfElementLocated(cookieLocator));
         cookieButton.click();
+    }
+
+    public void open() {
+        driver.get("https://qa-scooter.praktikum-services.ru/");
     }
 
     public void clickOrderHeaderButton() {
@@ -42,5 +48,18 @@ public class MainPage {
                 "arguments[0].scrollIntoView({block: 'center', behavior: 'smooth'});", element);
         wait.until(ExpectedConditions.elementToBeClickable(element)).click();
     }
+
+    public void clickCardButton(int index) {
+        By locator = By.xpath(String.format("//div[@id='accordion__heading-%d']", index));
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
+        element.click();
+    }
+
+    public String getCardText(int index) {
+        By locator = By.xpath(String.format("//div[@id='accordion__panel-%d']/p", index));
+        WebElement content = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        return content.getText();
+    }
+
 }
 

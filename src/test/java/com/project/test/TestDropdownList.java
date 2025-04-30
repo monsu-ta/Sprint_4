@@ -1,5 +1,6 @@
-package com.project.test.dropdown.list;
+package com.project.test;
 
+import com.project.page.objects.MainPage;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -10,7 +11,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.util.Arrays;
 import java.util.Collection;
 
-import static com.project.test.dropdown.list.CardText.*;
+import static com.project.data.CardContent.*;
 
 @RunWith(Parameterized.class)
 public class TestDropdownList {
@@ -31,24 +32,24 @@ public class TestDropdownList {
     public static Collection<Object[]> getTestData() {
         return Arrays.asList(new Object[][]{
 
-                {"chrome", 0, dailyRentalPrice},
-                {"chrome", 1, singleScooterPerOrder},
-                {"chrome", 2, rentalStartTime},
-                {"chrome", 3, sameDayDeliveryUnavailable},
-                {"chrome", 4, urgentSupportContact},
-                {"chrome", 5, scooterBatteryLife},
-                {"chrome", 6, cancellationPolicy},
-                {"chrome", 7, moscowAndRegionCoverage},
+                {"chrome", 0, DAILY_RENTAL_PRICE},
+                {"chrome", 1, SINGLE_SCOOTER_PER_ORDER},
+                {"chrome", 2, RENTAL_START_TIME},
+                {"chrome", 3, SAME_DAY_DELIVERY_UNAVAILABLE},
+                {"chrome", 4, URGENT_SUPPORT_CONTACT},
+                {"chrome", 5, SCOOTER_BATTERY_LIFE},
+                {"chrome", 6, CANCELLATION_POLICY},
+                {"chrome", 7, MOSCOW_AND_REGION_COVERAGE},
 
 
-                {"firefox", 0, dailyRentalPrice},
-                {"firefox", 1, singleScooterPerOrder},
-                {"firefox", 2, rentalStartTime},
-                {"firefox", 3, sameDayDeliveryUnavailable},
-                {"firefox", 4, urgentSupportContact},
-                {"firefox", 5, scooterBatteryLife},
-                {"firefox", 6, cancellationPolicy},
-                {"firefox", 7, moscowAndRegionCoverage}
+                {"firefox", 0, DAILY_RENTAL_PRICE},
+                {"firefox", 1, SINGLE_SCOOTER_PER_ORDER},
+                {"firefox", 2, RENTAL_START_TIME},
+                {"firefox", 3, SAME_DAY_DELIVERY_UNAVAILABLE},
+                {"firefox", 4, URGENT_SUPPORT_CONTACT},
+                {"firefox", 5, SCOOTER_BATTERY_LIFE},
+                {"firefox", 6, CANCELLATION_POLICY},
+                {"firefox", 7, MOSCOW_AND_REGION_COVERAGE}
         });
     }
 

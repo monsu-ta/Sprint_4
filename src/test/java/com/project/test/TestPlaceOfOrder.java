@@ -1,7 +1,7 @@
-package com.project.test.place.of.order;
+package com.project.test;
 
 import com.project.page.objects.MainPage;
-import com.project.page.objects.OrderDataTest;
+import com.project.data.OrderDataTest;
 import com.project.page.objects.OrderFirstPage;
 import com.project.page.objects.OrderSecondPage;
 import org.junit.After;
